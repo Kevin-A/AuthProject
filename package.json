@@ -1,0 +1,21 @@
+{
+  "name": "authProject",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "passport-local-mongoose": "~0.3.0",
+    "passport-local": "~1.0.0",
+    "passport": "~0.2.0",
+    "yar": "~2.1.0",
+    "travelogue": "~2.0.1",
+    "joi": "~4.2.x",
+    "hapi": "5.0.x",
+    "mongoose": "~3.8.11"
+  }
+}
