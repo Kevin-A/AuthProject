@@ -1,7 +1,7 @@
 module.exports = {
 	mongo: {
-		username: 'username',
-		password: 'password',
+		username: '<dbusername>',
+		password: '<dbpassword>',
 		url: '<host>.mongolab.com:<port>',
 		database: 'authdb'
 	},
