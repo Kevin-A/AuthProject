@@ -15,6 +15,13 @@ Before you're able to get it working you have to enter your MongoLab credentials
 
 These are all supplied by MongoLab.
 
+After changing these settings don't forget to run
+```
+npm install
+```
+
+to install the dependencies.
+
 ===========
 
 Feel free to do whatever you like with the code.
