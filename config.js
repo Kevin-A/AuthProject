@@ -9,4 +9,4 @@ module.exports = {
 		hostname: 'localhost',
 		port: 1337
 	}
-}
+};

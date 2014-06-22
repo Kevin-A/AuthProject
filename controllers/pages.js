@@ -10,7 +10,7 @@ exports.index = {
 
     	reply(data);
 	}
-}
+};
 
 /**
  * Handles a call to /login and shows a login form
@@ -32,7 +32,7 @@ exports.login = {
 
    		reply(form);
 	}
-}
+};
 
 /**
  * Handles a call to /register and shows a registration form
@@ -54,7 +54,7 @@ exports.register = {
 
     	reply(form);
 	}
-}
+};
 
 /**
  * Handles a call to /batmanshideout and shows super secret stuff
@@ -68,4 +68,4 @@ exports.secret = {
 
     	reply(data);
 	}
-}
+};

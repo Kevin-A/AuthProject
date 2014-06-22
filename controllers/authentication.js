@@ -17,7 +17,7 @@ exports.login = {
         	successRedirect: '/batmanshideout'
         })(request, reply);
     }
-}
+};
 
 /**
  * Responds to GET /logout and logs out the user
@@ -28,7 +28,7 @@ exports.logout = {
 		request.session._logout();
 		reply().redirect('/');
 	}
-}
+};
 
 /**
  * Responds to POST /register and creates a new user.
@@ -60,4 +60,4 @@ exports.register = {
             reply().redirect('/login');
         });
 	}
-}
+};
