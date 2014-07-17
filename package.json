@@ -9,13 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "passport-local-mongoose": "~0.3.0",
-    "passport-local": "~1.0.0",
-    "passport": "~0.2.0",
-    "yar": "~2.1.0",
-    "travelogue": "~2.0.1",
-    "mongoose": "~3.8.11",
-    "joi": "~3.x.x",
-    "hapi": "~4.x.x"
+    "mongoose": "~3.8.13",
+    "joi": "~4.6.x",
+    "hapi": "~6.2.x",
+    "hapi-auth-cookie": "~1.3.1",
+    "passport-local-mongoose": "~0.3.0"
   }
 }

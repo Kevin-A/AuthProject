@@ -1,5 +1,4 @@
 var Mongoose = require('../database').Mongoose;
-var passportLocalMongoose = require('passport-local-mongoose');
 
 //create the schema
 var userSchema = new Mongoose.Schema({
@@ -8,10 +7,7 @@ var userSchema = new Mongoose.Schema({
 	creationDate: { type: Date,		required: true, default: Date.now },
 });
 
-userSchema.plugin(passportLocalMongoose, { usernameField: 'email', hashField: 'password', usernameLowerCase: true });
+userSchema.plugin(require('passport-local-mongoose'), { usernameField: 'email', hashField: 'password', usernameLowerCase: true });
 
-//create the model
-var User = Mongoose.model('User', userSchema, 'Users');
-
-// Exports
-exports.User = User;
+//create the model and add it to the exports
+var User = exports.User = Mongoose.model('User', userSchema, 'Users');
