@@ -1,6 +1,5 @@
 var Joi = require('joi');
 var User = require('../models/user').User;
-var LocalMongoose = require('passport-local-mongoose');
 
 /**
  * Responds to POST /login and logs the user in, well, soon.
