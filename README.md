@@ -1,11 +1,15 @@
 AuthProject
 ===========
 
-Updated version of:
+> First version:
 > Source code of a post regarding User authentication with Hapi, Passport and Mongoose located at 
 > <http://emptymind.me/user-authentication-with-hapi-passport-and-mongoose/>
-
-The changes can be found on <http://emptymind.me/user-authentication-with-hapi-hapi-auth-cookie-and-mongoose/>
+>
+> Second version (Hapi 6):
+> <http://emptymind.me/user-authentication-with-hapi-hapi-auth-cookie-and-mongoose/>
+>
+> Third version (Hapi 8):
+> <http://emptymind.me/updating-authproject-to-hapi-8-2-x/>
 
 ## Getting it to run
 
