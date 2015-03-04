@@ -1,12 +1,15 @@
 AuthProject
 ===========
 
-Source code of a post regarding User authentication with Hapi, Passport and Mongoose located at 
-<http://emptymind.me/user-authentication-with-hapi-passport-and-mongoose/>
+Updated version of:
+> Source code of a post regarding User authentication with Hapi, Passport and Mongoose located at 
+> <http://emptymind.me/user-authentication-with-hapi-passport-and-mongoose/>
+
+The changes can be found on <http://emptymind.me/user-authentication-with-hapi-hapi-auth-cookie-and-mongoose/>
 
 ## Getting it to run
 
-Before you're able to get it working you have to enter your MongoLab credentials or alter to code to use a local MongoDB database. The things you have to enter in the `config.js` file are:
+Before you're able to get it working you have to enter your MongoLab credentials or alter to code to use a local MongoDB database. Copy the `config.example.js` file to `config.js` and enter the following information:
 
 - Username of your dbuser
 - Password of that dbuser (dbpassword)
