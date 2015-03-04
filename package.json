@@ -9,10 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mongoose": "~3.8.13",
-    "joi": "~4.6.x",
-    "hapi": "~6.2.x",
-    "hapi-auth-cookie": "~1.3.1",
-    "passport-local-mongoose": "~0.3.0"
+    "hapi": "^8.2.0",
+    "hapi-auth-cookie": "^1.3.2",
+    "joi": "^4.6.2",
+    "mongoose": "^3.8.24",
+    "passport-local-mongoose": "^0.3.0"
   }
 }

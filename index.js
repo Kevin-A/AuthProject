@@ -4,10 +4,11 @@ var Config = require('./config');
 var User = require('./models/user').User;
 
 // Create a server with a host and port
-var server = Hapi.createServer(Config.server.port);
+var server = new Hapi.Server();
+server.connection({ port: Config.server.port });
 
 // Register the plugin
-server.pack.register(require('hapi-auth-cookie'), function (err) {
+server.register(require('hapi-auth-cookie'), function (err) {
     if (err) {
         throw err;
     }
@@ -20,17 +21,17 @@ server.pack.register(require('hapi-auth-cookie'), function (err) {
         isSecure: false, // required for non-https applications
         ttl: 24* 60 * 60 * 1000 // Set session to 1 day
     });
+});
 
-    // Print some information about the incoming request for debugging purposes
-    server.ext('onRequest', function (request, next) {
-        console.log(request.path, request.query);
-        next();
-    });
+// Print some information about the incoming request for debugging purposes
+server.ext('onRequest', function (request, next) {
+    console.log(request.path, request.query);
+    next();
+});
 
-    server.route(Routes.endpoints);
+server.route(Routes.endpoints);
 
-    // Start the server
-    server.start(function() {
-        console.log("The server has started on port: " + server.info.port);
-    });
+// Start the server
+server.start(function() {
+    console.log("The server has started on port: " + server.info.port);
 });
