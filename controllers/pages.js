@@ -3,8 +3,17 @@
  * Handles a call to / and shows some text with links to login and registration
  */
 exports.index = {
+	auth: {
+		mode: 'try',
+		strategy: 'session'
+	},
 	handler: function (request, reply) {
-		console.log('lol');
+
+		if (request.auth.isAuthenticated) {
+			// The user is already logged in, redirect it to the hideout
+			return reply.redirect('/batmanshideout');
+		}
+
 		var data =
 		'<h1> Hi there! </h1>' +
 		'<p> Would you like to <a href="login">login</a> or <a href="register">register</a>? </p>';
@@ -17,6 +26,10 @@ exports.index = {
  * Handles a call to /login and shows a login form
  */
 exports.login = {
+	auth: {
+		mode: 'try',
+		strategy: 'session'
+	},
 	handler: function (request, reply) {
 
 		if (request.auth.isAuthenticated) {
@@ -32,7 +45,7 @@ exports.login = {
 		'	<p><input type="submit"   value="Login"></p>' +
 		'</form>';
 
-   		reply(form);
+   		return reply(form);
 	}
 };
 
@@ -40,7 +53,12 @@ exports.login = {
  * Handles a call to /register and shows a registration form
  */
 exports.register = {
+	auth: {
+		mode: 'try',
+		strategy: 'session'
+	},
 	handler: function (request, reply) {
+		
 		if (request.auth.isAuthenticated) {
 			// The user is already logged in, redirect it to the hideout
 			return reply.redirect('/batmanshideout');
@@ -54,7 +72,7 @@ exports.register = {
 		'	<p><input type="submit"   value="Register"></p>' +
 		'</form>';
 
-    	reply(form);
+    	return reply(form);
 	}
 };
 
@@ -68,6 +86,6 @@ exports.secret = {
 		'<h1> Batman\'s super secret hideout! </h1>' +
 		'<p> Welcome to this totally secret hideout, ' + request.auth.credentials.email + '. Would you like to <a href="logout">leave</a>? </p>';
 
-    	reply(data);
+    	return reply(data);
 	}
 };
