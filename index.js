@@ -1,7 +1,7 @@
 var Hapi = require('hapi');
 var Routes = require('./routes');
 var Config = require('./config');
-var User = require('./models/user').User;
+// var User = require('./models/user').User;
 
 // Create a server with a host and port
 var server = new Hapi.Server();
@@ -24,9 +24,9 @@ server.register(require('hapi-auth-cookie'), function (err) {
 });
 
 // Print some information about the incoming request for debugging purposes
-server.ext('onRequest', function (request, next) {
+server.ext('onRequest', function (request, reply) {
     console.log(request.path, request.query);
-    next();
+    return reply.continue();
 });
 
 server.route(Routes.endpoints);
