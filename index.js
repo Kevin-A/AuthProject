@@ -17,7 +17,6 @@ server.register(require('hapi-auth-cookie'), function (err) {
     server.auth.strategy('session', 'cookie', {
         password: 'worldofwalmart', // cookie secret
         cookie: 'session', // Cookie name
-        redirectTo: false, // Let's handle our own redirections
         isSecure: false, // required for non-https applications
         ttl: 24* 60 * 60 * 1000 // Set session to 1 day
     });
