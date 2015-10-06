@@ -8,7 +8,8 @@ var server = new Hapi.Server();
 server.connection({ port: Config.server.port });
 
 // Register the plugin
-server.register(require('hapi-auth-cookie'), function (err) {
+server.register([require('hapi-auth-cookie'), require('vision')], function (err) {
+
     if (err) {
         throw err;
     }
@@ -19,6 +20,14 @@ server.register(require('hapi-auth-cookie'), function (err) {
         cookie: 'session', // Cookie name
         isSecure: false, // required for non-https applications
         ttl: 24* 60 * 60 * 1000 // Set session to 1 day
+    });
+
+    // Set our view engine, we'll use handlebars
+    server.views({
+        engines: {
+            html: require('handlebars')
+        },
+        path: __dirname + '/views'
     });
 });
 

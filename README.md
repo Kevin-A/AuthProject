@@ -21,6 +21,8 @@ Most notably: passport-local-mongoose. Earlier versions used passport-local-mong
 
 The update also provided certain new error messages which have been added to AuthProject 2.0.0.
 
+Additionally, I have added [Vision](https://github.com/hapijs/vision), Hapi's view engine plugin, to get rid of the HTML in the route handlers.
+
 ## Getting it to run
 
 Before you're able to get it working you have to enter your MongoLab credentials or alter to code to use a local MongoDB database. Copy the `config.example.js` file to `config.js` and enter the following information:

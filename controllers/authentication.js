@@ -5,12 +5,6 @@ var User = require('../models/user');
  * Responds to POST /login and logs the user in, well, soon.
  */
 exports.login = {
-  validate: {
-    payload: {
-      email: Joi.string().email().required(),
-      password: Joi.string().required()
-    }
-  },
   handler: function (request, reply) {
 
     // In the version with Travelogue and Mongoose this was all handled by Passport (hence we retrieved
@@ -26,9 +20,11 @@ exports.login = {
       // Something went wrong with the login process, could be any of:
       // https://github.com/saintedlama/passport-local-mongoose#error-messages
       if (passwordError) {
-        // For now, just show the error and redirect to /login
+        // For now, just show the error and login form
         console.log(passwordError);
-        return reply.redirect('/login');
+        return reply.view('login', {
+          errorMessage: passwordError.message,
+        });
       }
 
       // If the authentication failed user will be false. If it's not false, we store the user
