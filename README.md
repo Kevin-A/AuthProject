@@ -1,8 +1,10 @@
 AuthProject
 ===========
 
+> __Accompanying blog posts__
+>
 > First version:
-> Source code of a post regarding User authentication with Hapi, Passport and Mongoose located at 
+> Source code of a post regarding User authentication with Hapi, Passport and Mongoose located at:
 > <http://emptymind.me/user-authentication-with-hapi-passport-and-mongoose/>
 >
 > Second version (Hapi 6):
@@ -10,6 +12,14 @@ AuthProject
 >
 > Third version (Hapi 8):
 > <http://emptymind.me/updating-authproject-to-hapi-8-2-x/>
+
+## Version 2.0.0
+
+Lots of changes in this version, since some major dependencies have had several updates.
+
+Most notably: passport-local-mongoose. Earlier versions used passport-local-mongoose 0.3.0. It has since been updated to 3.1.0 and due to security implications it switched from sha1 to sha256. If you decide to upgrade a production system remember that your users will not be able to log in since the digest algorithm was changed!
+
+The update also provided certain new error messages which have been added to AuthProject 2.0.0.
 
 ## Getting it to run
 

@@ -1,18 +1,18 @@
 {
   "name": "authProject",
-  "version": "1.1.0",
-  "description": "",
+  "version": "2.0.0",
+  "description": "A simple webserver with authentication built with Hapi, Hapi-auth-cookie, and Mongoose",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Kevin Adegeest",
+  "license": "MIT",
   "dependencies": {
-    "hapi": "^8.2.0",
-    "hapi-auth-cookie": "^2.0.0",
-    "joi": "^4.6.2",
-    "mongoose": "^3.8.24",
-    "passport-local-mongoose": "^0.3.0"
+    "hapi": "^10.4.0",
+    "hapi-auth-cookie": "^3.1.0",
+    "joi": "^6.9.0",
+    "mongoose": "^4.1.10",
+    "passport-local-mongoose": "^3.1.0"
   }
 }
